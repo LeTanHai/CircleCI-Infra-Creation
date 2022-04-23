@@ -25,17 +25,17 @@ jobs:
       - checkout
       # add private key (pem file) to ssh instance
       - add_ssh_key:
-        fingerprints: [a0:c7:6c:07:e2:e9:04:85:e8:ee:2e:23:b3:35:bd:ca]
+          fingerprints: [a0:c7:6c:07:e2:e9:04:85:e8:ee:2e:23:b3:35:bd:ca]
 
       - run:
-        name: Install Ansible
-        command: |
-          apk add --update ansible
+          name: Install Ansible
+          command: |
+            apk add --update ansible
 
       - run:
-        name: Configrate infra using Ansible remote control
-        command: |
-          ansible-playbook -i inventory.txt playbook-main.yml
+          name: Configrate infra using Ansible remote control
+          command: |
+            ansible-playbook -i inventory.txt playbook-main.yml
 
 
 # Invoke jobs via workflows
