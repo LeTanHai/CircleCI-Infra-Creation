@@ -11,12 +11,12 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Create infra stack
-        command: |
-          aws cloudformation deploy \
-          --template-file create-ec2.yml \
-          --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5} \
-          --region us-east-1
+          name: Create infra stack
+          command: |
+            aws cloudformation deploy \
+            --template-file create-ec2.yml \
+            --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5} \
+            --region us-east-1
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
