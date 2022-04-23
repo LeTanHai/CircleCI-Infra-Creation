@@ -24,8 +24,8 @@ jobs:
     steps:
       - checkout
       # add private key (pem file) to ssh instance
-      - add_ssh_key:
-          fingerprints: [a0:c7:6c:07:e2:e9:04:85:e8:ee:2e:23:b3:35:bd:ca]
+      - add_ssh_keys:
+          fingerprints: ["a0:c7:6c:07:e2:e9:04:85:e8:ee:2e:23:b3:35:bd:ca"]
 
       - run:
           name: Install Ansible
